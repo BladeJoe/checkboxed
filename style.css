@@ -4,11 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: rgb(250, 235, 215) !important;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-}
+body {}
 
 .container {
     max-width: 1000px;
@@ -30,11 +30,15 @@ a {
     justify-content: space-between;
     align-items: center;
     vertical-align: middle;
-    height: 62px;
+    display: block;
+    position: relative;
+    height: 64px;
+    
 }
 
 .navbar .menu-items {
     display: flex;
+    float: right;
 }
 
 .navbar .nav-container li {
@@ -51,12 +55,6 @@ a {
 
 .navbar .nav-container a:hover {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.nav-container {
-    display: block;
-    position: relative;
-    height: 60px;
 }
 
 .nav-container .checkbox {
@@ -89,7 +87,7 @@ a {
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #0e2431;
+    background: antiquewhite;
 }
 
 .nav-container .hamburger-lines .line1 {
@@ -107,13 +105,15 @@ a {
 }
 
 .navbar .menu-items {
+    position: absolute;
     transform: translate(-100%);
     display: flex;
+    margin: 0;
+    height: 64px;
     justify-content: space-around;
     align-items: center;
     gap: 12px;
     flex-direction: row;
-    margin-left: -40px;
     transition: transform 0.1s ease-in-out;
     text-align: center;
 }
@@ -123,18 +123,8 @@ a {
     font-weight: 500;
 }
 
-.logo {
-    position: absolute;
-    top: 5px;
-    left: 15px;
-    font-size: 1.2rem;
-    color: #0e2431;
-    position: relative;
-    display: inline-block;
-}
-
 .nav-container input[type="checkbox"]:checked~.menu-items {
-    transform: translateX(590px);
+    transform: translateX(200%);
 }
 
 .nav-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
@@ -150,55 +140,38 @@ a {
 }
 
 .nav-container input[type="checkbox"]:checked+.split-word .bottom {
-    top: 16px;
+    top: 32px;
 }
 
 .nav-container input[type="checkbox"]:checked+.split-word .top {
-    top: -8px;
+    top: 8px;
 }
 
-.navbar .logo {
+.navbar .split-word {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     font-weight: bold;
 }
 
-.split-word {
-    position: relative;
-    display: inline-block;
-    width: 100%;
+.top,
+.bottom {
+    position: absolute;
+    margin-left: 72px;
 }
 
 .split-word .top {
-    position: absolute;
-    top: 7px;
-    left: 0;
     clip-path: inset(0 0 50% 0);
 
 }
 
 .split-word .bottom {
-    position: absolute;
-    display: flex;
-    top: 7px;
-    left: 0;
     clip-path: inset(50% 0 0 0);
 }
 
-
 .gun {
-    position: absolute;
-    line-height: 11px;
-    top: -10px;
-    left: -527px;
     background: #6c757d;
-    border: 5px #6c757d solid;
-    border-left: 399px #6c757d solid;
+    padding-left: 1000px;
+    transform: translate(-1000px);
     z-index: 1111111111;
-}
-
-.nav-container input[type="checkbox"]:checked>span {
-    background: red;
-
 }
